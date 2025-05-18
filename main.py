@@ -12,18 +12,18 @@ logger = get_logger().getChild(__name__)
 
 
 def main() -> None:
-    logger.info("Начало конфигурации бота🤑")
+    logger.info("Configuration start🤑")
     dp = Dispatcher()
     dp.include_router(start_router)
     dp.startup.register(on_startup)
     bot = Bot(
-        token=config.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+        token=config.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN)
     )
     app = web.Application()
     setup_webhook(app, dp, bot)
     setup_application(app, dp, bot=bot)
     web.run_app(app, host="0.0.0.0", port=8080)
-    logger.info("Бот запущен😋")
+    logger.info("Bot is running😋")
 
 
 if __name__ == "__main__":
