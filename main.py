@@ -7,6 +7,7 @@ from aiohttp import web
 from src.core.config import config
 from src.handlers import start_router
 from src.utils import get_logger, on_startup, setup_webhook
+from src.middleware import I18nMiddleware
 
 logger = get_logger().getChild(__name__)
 
@@ -14,6 +15,7 @@ logger = get_logger().getChild(__name__)
 def main() -> None:
     logger.info("Configuration start🤑")
     dp = Dispatcher()
+    dp.message.middleware(I18nMiddleware())
     dp.include_router(start_router)
     dp.startup.register(on_startup)
     bot = Bot(

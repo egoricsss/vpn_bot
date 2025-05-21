@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-18 13:21+0300\n"
+"POT-Creation-Date: 2025-05-18 19:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,18 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: src/handlers/start_handler.py:15
-msgid "*Hello!* I`m your VPN bot 🌐\n"
+msgid "Welcome! Choose an action:"
+msgstr ""
+
+#: src/keyboards/inline.py:6
+msgid "Subscription"
+msgstr ""
+
+#: src/keyboards/inline.py:7
+msgid "Pay"
+msgstr ""
+
+#: src/keyboards/inline.py:8
+msgid "Get config"
 msgstr ""
 

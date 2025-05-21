@@ -45,7 +45,7 @@ logger.addHandler(queue_handler)
 queue_listener = QueueListener(log_queue, file_handler, console_handler, respect_handler_level=True)
 queue_listener.start()
 
-logger.debug("✅ Логгер готов к работе")
+logger.debug("✅ Logging is ready for work")
 
 
 def get_logger() -> logging.Logger:

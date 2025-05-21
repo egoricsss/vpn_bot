@@ -1,4 +1,5 @@
 import gettext
+from typing import Callable
 
 LANGUAGES = ["ru", "en"]
 
@@ -8,17 +9,7 @@ _translations = {
     for lang in LANGUAGES
 }
 
-
-def get_translator(lang: str):
-    try:
-        return gettext.translation("messages", localedir="translations", languages=[lang])
-    except FileNotFoundError:
-        return gettext.translation("messages", localedir="translations", languages=["en"])
-
-
-_ = lambda s: s
-
-
-def set_language(lang: str):
-    global _
-    _ = get_translator(lang)
+def get_translator(lang: str) -> Callable[[str], str]:
+    if lang != "ru":
+        return _translations.get("en", _translations["en"]).gettext
+    return _translations.get("ru", _translations["en"]).gettext

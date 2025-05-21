@@ -1,66 +1,8 @@
 networks:
   vpn-network:
-    driver: bridge
+    external: true
 
 services:
-#  postgres:
-#    image: postgres:latest
-#    container_name: postgres
-#    environment:
-#      POSTGRES_USER: vpn
-#      POSTGRES_PASSWORD: vpn
-#      POSTGRES_DB: vpn
-#    ports:
-#      - "5432:5432"
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data
-#    networks:
-#      - vpn-network
-
-#  zookeeper:
-#    image: confluentinc/cp-zookeeper:latest
-#    container_name: zookeeper
-#    ports:
-#      - "2181:2181"
-#    environment:
-#      ZOOKEEPER_CLIENT_PORT: 2181
-#    networks:
-#      - vpn-network
-#
-#  kafka:
-#    image: confluentinc/cp-kafka:latest
-#    container_name: kafka
-#    ports:
-#      - "9092:9092"
-#      - "29092:29092"
-#    environment:
-#      KAFKA_BROKER_ID: 1
-#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
-#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-#      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-#    depends_on:
-#      - zookeeper
-#    networks:
-#      - vpn-network
-
-#  # FastAPI
-#  fastapi:
-#    build:
-#      context: ./fastapi
-#      dockerfile: Dockerfile
-#    container_name: fastapi
-#    ports:
-#      - "8000:8000"
-#    depends_on:
-#      - postgres
-#      - kafka
-#    environment:
-#      DATABASE_URL: postgresql+asyncpg://vpn:vpn@postgres:5432/vpn
-#      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
-#    networks:
-#      - vpn-network
-#
   telegram_bot:
     build:
       context: ./
