@@ -12,11 +12,11 @@ def clear_logs_folder(log_dir="logs", pattern="bot.log*"):
             log_files = glob.glob(os.path.join(log_dir, pattern))
             for f in log_files:
                 os.remove(f)
-                logging.info(f"🤗 Удалён файл: {f}")
+                logging.info(f"🤗 Deleted file: {f}")
         else:
-            logging.info(f"🐻 Папка {log_dir} не найдена")
+            logging.info(f"🐻 dir {log_dir} not found")
     except Exception as e:
-        logging.info(f"❌ Ошибка при очистке логов: {e}")
+        logging.info(f"❌ Error while deleting logs: {e}")
 
 os.makedirs("logs", exist_ok=True)
 log_queue = queue.Queue()
