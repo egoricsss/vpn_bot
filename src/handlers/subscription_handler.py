@@ -6,6 +6,7 @@ from src.utils import get_logger
 router = Router()
 logger = get_logger().getChild(__name__)
 
+
 @router.message(Command("subscription"))
 async def show_subscription(message: Message, _):
     # Проверка подписки через FastAPI

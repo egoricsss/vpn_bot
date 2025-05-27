@@ -5,6 +5,8 @@ RUN apk add --no-cache \
         gettext-dev \
         alpine-sdk
 
+RUN pip install --no-cache-dir watchdog
+
 WORKDIR /app
 
 COPY ../requirements.txt .

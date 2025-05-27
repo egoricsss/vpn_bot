@@ -16,4 +16,6 @@ services:
       - vpn-bot
     ports:
       - "8080:8080"
-    command: ["python", "-m", "src"]
+    volumes:
+      - ./src:/app/src
+    command: ["watchmedo", "auto-restart", "--directory=/app", "--pattern=*.py", "--recursive", "--", "python", "-m", "src"]
