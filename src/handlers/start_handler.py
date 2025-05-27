@@ -1,9 +1,10 @@
+import aiohttp
 from aiogram import Router
 from aiogram.filters import CommandStart
 from aiogram.types import Message
-from src.utils import get_logger
+
 from src.keyboards import get_main_markup
-import aiohttp
+from src.utils import get_logger
 
 router = Router()
 logger = get_logger().getChild(__name__)

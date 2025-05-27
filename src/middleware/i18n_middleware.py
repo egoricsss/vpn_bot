@@ -1,6 +1,8 @@
+from typing import Any, Awaitable, Callable
+
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject, User
-from typing import Callable, Awaitable, Any
+
 from src.utils import get_translator
 
 

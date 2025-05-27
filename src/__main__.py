@@ -6,8 +6,8 @@ from aiohttp import web
 
 from src.core.config import config
 from src.handlers import start_router
-from src.utils import get_logger, on_startup, setup_webhook
 from src.middleware import I18nMiddleware
+from src.utils import get_logger, on_startup, setup_webhook
 
 logger = get_logger().getChild(__name__)
 
