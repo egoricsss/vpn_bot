@@ -1,5 +1,5 @@
 networks:
-  vpn-network:
+  vpn-bot:
     external: true
 
 services:
@@ -13,10 +13,7 @@ services:
     env_file:
       - env/.env
     networks:
-      - vpn-network
+      - vpn-bot
     ports:
       - "8080:8080"
-    command: ["python", "main.py"]
-
-volumes:
-  postgres_data:
+    command: ["python", "-m", "src"]

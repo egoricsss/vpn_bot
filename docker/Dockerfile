@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.13-alpine
 
 RUN apk add --no-cache \
         gettext \
@@ -11,6 +11,8 @@ COPY ../requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY translations /app/translations
 
 RUN pybabel compile -d translations
+
+COPY . .
